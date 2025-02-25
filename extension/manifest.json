@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "POE2 本地翻译插件",
+  "version": "1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["*://poe2.ninja/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://poe2.ninja/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["locales/zh/data.json"],
+      "matches": ["*://poe2.ninja/*"]
+    }
+  ]
+}
